@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# put this file under /etc/update-motd.d/
+
+cows=($(ls -1 /usr/share/cowsay/cows|xargs))
+animal=${cows[RANDOM % ${#cows[@]}]}
+fortune | cowsay -f "$animal" | lolcat
